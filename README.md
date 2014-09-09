@@ -5,7 +5,7 @@ Imagine multidimensional list with checkboxes. They are nested in LI-elements (b
 
 Child-checkboxes are inherit parent's property. Is possible to uncheck automatically checked items — that will exceptions. Also you can set element to display human-readable list of checked and excepted checkboxes there.
 
-**[You can see demo here](uoziod.github.io/deep-checkbox)**.
+**[You can see demo here](http://uoziod.github.io/deep-checkbox)**.
 
 Plugin should be called to selector wrapping whole list:
 
