@@ -15,8 +15,8 @@
 		}
 	],
 	"bugs": "https://github.com/uoziod/deep-checkbox/issues",
-	"homepage": "https://github.com/uoziod/deep-checkbox",
-	"docs": "https://github.com/uoziod/deep-checkbox",
+	"homepage": "http://http://uoziod.github.io/deep-checkbox/",
+	"docs": "http://uoziod.github.io/deep-checkbox/",
 	"download": "https://github.com/uoziod/deep-checkbox",
 	"dependencies": {
 		"jquery": ">=1.5"
