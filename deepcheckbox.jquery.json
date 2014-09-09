@@ -1,0 +1,24 @@
+{
+	"name": "deepcheckbox",
+	"title": "Deep Checkbox",
+	"description": "jQuery plugin that brings some logic to nested checkboxes.",
+	"keywords": ["checkbox", "group", "list"],
+	"version": "0.1.0",
+	"author": {
+		"name": "Semyon Vyskubov",
+		"url": "http://uoziod.ru"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/uoziod/deep-checkbox/blob/master/LICENSE"
+		}
+	],
+	"bugs": "https://github.com/uoziod/deep-checkbox/issues",
+	"homepage": "https://github.com/uoziod/deep-checkbox",
+	"docs": "https://github.com/uoziod/deep-checkbox",
+	"download": "https://github.com/uoziod/deep-checkbox",
+	"dependencies": {
+		"jquery": ">=1.5"
+	}
+}
