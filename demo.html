@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Deep Checkbox jQuery Plugin Demo</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="demo.css"/>
+	<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="script/jquery.deepcheckbox.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+	<div class="header">
+		<h1>Deep Checkbox <span>0.1.0</span></h1>
+
+		<h2>jQuery plugin that brings some logic to nested checkboxes</h2>
+	</div>
+
+	<div class="center">
+		<a class="button" href="https://github.com/uoziod/deep-checkbox">Github</a>
+		<a class="button" href="https://github.com/uoziod/deep-checkbox/archive/master.zip">Download</a>
+	</div>
+
+	<hr />
+
+	<p>We have multidimensional list like on the following example. Here's checkboxes that are nested in LI-elements (by the way, this nesting is necessary for plugin work).</p>
+
+	<p>Children checkboxes are inherit parent's property. Is possible to uncheck automatically checked items &mdash; that will exceptions. Also you can set element to display human-readable list of checked and excepted checkboxes there.</p>
+
+	<div class="example">
+		<div class="anchor">
+			<ul>
+				<li>
+					<label><input type="checkbox" data-id="netherlands" data-name="Netherlands" /> Netherlands</label>
+					<ul>
+						<li>
+							<label><input type="checkbox" data-id="north-holland" data-name="North Holland" /> North Holland</label>
+							<ul>
+								<li><label><input type="checkbox" data-id="amsterdam" data-name="Amsterdam" /> Amsterdam</label></li>
+								<li><label><input type="checkbox" data-id="haarlem" data-name="Haarlem" /> Haarlem</label></li>
+								<li><label><input type="checkbox" data-name="Alkmaar" /> Alkmaar</label></li>
+							</ul>
+						</li>
+						<li>
+							<label><input type="checkbox" data-id="south-holland" data-name="South Holland" /> South Holland</label>
+							<ul>
+								<li><label><input type="checkbox" data-id="the-hague" data-name="The Hague" /> The Hague</label></li>
+								<li><label><input type="checkbox" data-id="rotterdam" data-name="Rotterdam" /> Rotterdam</label></li>
+								<li><label><input type="checkbox" data-name="Gouda" /> Gouda</label></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<label><input type="checkbox" data-id="belgium" data-name="Belgium" /> Belgium</label>
+					<ul>
+						<li>
+							<label><input type="checkbox" data-id="flemish-region" data-name="Flemish Region" /> Flemish Region</label>
+							<ul>
+								<li><label><input type="checkbox" data-id="antwerp" data-name="Antwerp" /> Antwerp</label></li>
+								<li><label><input type="checkbox" data-id="ghent" data-name="Ghent" /> Ghent</label></li>
+							</ul>
+						</li>
+						<li>
+							<label><input type="checkbox" data-id="walloon-region" data-name="Walloon Region" /> Walloon Region</label>
+							<ul>
+								<li><label><input type="checkbox" data-id="charleroi" data-name="Charleroi" /> Charleroi</label></li>
+								<li><label><input type="checkbox" data-name="Liège" /> Liège</label></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div>
+			<p>Selected items (readable): <span class="selected-readable"></span></p>
+			<p>Selected items: <span class="selected">[]</span></p>
+			<p>Excepted items: <span class="excepted">[]</span></p>
+		</div>
+	</div>
+
+	<p>Plugin should be called to selector wrapping whole list:</p>
+
+	<div class="code">
+		&lt;div class=&quot;wrapper&quot;&gt;<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;checkbox&quot; data-id="item" data-name="Item" /&gt; Item<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;input type=&quot;checkbox&quot; data-id="subitem1" data-name="Subitem 1" /&gt; Subitem 1&lt;/li&gt;<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;input type=&quot;checkbox&quot; data-id="subitem2" data-name="Subitem 2" /&gt; Subitem 2&lt;/li&gt;<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;input type=&quot;checkbox&quot; data-name="Subitem 3" /&gt; Subitem 3&lt;/li&gt;<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />
+		&lt;/div&gt;<br />
+		<br />
+		&lt;script&gt;<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;$('.wrapper').deepcheckbox();<br />
+		&lt;/script&gt;<br />
+	</div>
+
+	<p>Plugin can be called with following options:</p>
+
+	<div class="code">
+		$('.wrapper').deepcheckbox({<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;readableListTarget: '.selector', // Selector for element(s), where will be displayed readable text with checked items<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;listItemBefore: '&lt;span class=&quot;item&quot;&gt;', // Prefix before each item in readable list<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;listItemAfter: '&lt;/span&gt;', // Suffix after each item in readable list<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;listItemsDivider: ', ', // Divider between items in readable list<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;labelExceptBefore: ' (except ', // Text before exceptions in readable list<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;labelExceptAfter: ')', // Text after exceptions in readable list<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;labelExceptBetween: ')', // Text between exceptions in readable list<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;labelNothingIsSelected: ')', // Option for substitution of "Nothing is selected" text<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;onChange: function (items, except) { // This function will be called when user is interacting with checkboxes<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(items); // First parameter is list of checked items<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(except); // Second parameter is list of exceptions<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+		});<br />
+	</div>
+
+	<p>Plugin is using <strong>data-id</strong> and <strong>data-name</strong> attributes in checkboxes. They are not necessary; if not set &mdash; it would be generated (see Alkmaar & Liège items of example).</p>
+
+	<p><strong>data-name</strong> is value that will display in readable list when corresponding checkbox is set positive (should be the same as text near checkbox). <strong>data-id</strong> is what will be passed as array item into callback function <strong>onChange</strong>.</p>
+
+	<script>
+		$('.anchor').deepcheckbox({
+			readableListTarget: '.selected-readable',
+			onChange: function(items, except) {
+				$('.selected').html('[' + items.join(', ') + ']');
+				$('.excepted').html('[' + except.join(', ') + ']');
+			}
+		});
+	</script>
+
+	<div class="footer">
+		&copy; Semyon Vyskubov.
+		Code is licensed under the <a href="https://github.com/uoziod/deep-checkbox/blob/master/LICENSE">MIT License</a>.
+		Background pattern by <a href="http://luukvanbaars.com/">Luuk van Baars</a>.
+	</div>
+
+</div>
+
+</body>
+</html>
