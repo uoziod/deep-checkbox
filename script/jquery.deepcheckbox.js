@@ -1,7 +1,8 @@
 /**
  * Deep Checkbox
- * jQuery plugin that brings some logic to nested checkboxes
- * version 0.1.0
+ * A lightweight jQuery plugin for building complex nested checkbox trees,
+ * complete with its own set of child-parent inheritance logic.
+ * version 0.1.1
  *
  * Copyright (c) Semyon Vyskubov
  * https://github.com/uoziod/deep-checkbox
@@ -51,7 +52,7 @@
 
 						for (var i = 0, len = branch.length; i < len; i++) {
 							if (branch[i].el.prop('checked')) {
-								var value = options.listItemBefore + branch[i].el.data('name'),
+								var value = options.listItemBefore.replace('{{id}}', branch[i].el.data('id')) + branch[i].el.data('name'),
 									exceptCount = 0;
 
 								if (branch[i].children) {
@@ -79,7 +80,7 @@
 									skipAdding = false;
 								}
 
-								if (!skipAdding || !branch[i].children && exceptCount > 0) {
+								if (!skipAdding || exceptCount > 0) {
 									output.push(value);
 									items.push(branch[i].el.data('id'));
 								}
