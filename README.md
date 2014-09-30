@@ -1,4 +1,4 @@
-# [Deep Checkbox 0.1.0](http://uoziod.github.io/deep-checkbox)
+# [Deep Checkbox 0.1.1](http://uoziod.github.io/deep-checkbox)
 ### jQuery plugin that brings some logic to nested checkboxes
 
 Imagine multidimensional list with checkboxes. They are nested in LI-elements (by the way, nesting is necessary for this plugin work).
