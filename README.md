@@ -1,5 +1,5 @@
 # [Deep Checkbox 0.1.0](http://uoziod.github.io/deep-checkbox)
-### A lightweight jQuery plugin for building complex nested checkbox trees, complete with its own set of child-parent inheritance logic.
+### jQuery plugin that brings some logic to nested checkboxes
 
 Imagine multidimensional list with checkboxes. They are nested in LI-elements (by the way, nesting is necessary for this plugin work).
 
