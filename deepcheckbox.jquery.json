@@ -1,9 +1,9 @@
 {
 	"name": "deepcheckbox",
 	"title": "Deep Checkbox",
-	"description": "jQuery plugin that brings some logic to nested checkboxes.",
-	"keywords": ["checkbox", "group", "list"],
-	"version": "0.1.0",
+	"description": "A lightweight jQuery plugin for building complex nested checkbox trees, complete with its own set of child-parent inheritance logic.",
+	"keywords": ["checkbox", "group", "list", "input"],
+	"version": "0.1.1",
 	"author": {
 		"name": "Semyon Vyskubov",
 		"url": "http://uoziod.ru"
@@ -15,8 +15,8 @@
 		}
 	],
 	"bugs": "https://github.com/uoziod/deep-checkbox/issues",
-	"homepage": "https://github.com/uoziod/deep-checkbox",
-	"docs": "https://github.com/uoziod/deep-checkbox",
+	"homepage": "http://http://uoziod.github.io/deep-checkbox/",
+	"docs": "http://uoziod.github.io/deep-checkbox/",
 	"download": "https://github.com/uoziod/deep-checkbox",
 	"dependencies": {
 		"jquery": ">=1.5"
