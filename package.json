@@ -1,0 +1,24 @@
+{
+  "name": "deep-checkbox",
+  "version": "0.1.1",
+  "description": "A lightweight jQuery plugin for building complex nested checkbox trees, complete with its own set of child-parent inheritance logic.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uoziod/deep-checkbox.git"
+  },
+  "keywords": [
+    "jquery",
+    "checkbox"
+  ],
+  "author": "Semyon Vyskubov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uoziod/deep-checkbox/issues"
+  },
+  "homepage": "https://github.com/uoziod/deep-checkbox",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.2"
+  }
+}
